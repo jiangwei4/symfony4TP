@@ -3,12 +3,15 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
+ * @UniqueEntity("email")
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -36,7 +39,7 @@ class User
     /**
      * @Assert\Email()
      * @Assert\NotBlank()
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
      */
     private $email;
 
@@ -45,6 +48,17 @@ class User
      * @ORM\Column(type="string", length=255)
      */
     private $password;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Movie", mappedBy="user")
+     */
+    private $movies;
+
+    /**
+     * @ORM\Column(type="simple_array")
+     */
+    private $roles;
 
     public function getId()
     {
@@ -110,4 +124,50 @@ class User
 
         return $this;
     }
+    public function eraseCredentials()
+    {
+    }
+    public function getSalt()
+    {
+        return null;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRoles()
+    {
+        return $this->roles;
+    }
+
+    /**
+     * @param mixed $roles
+     */
+    public function setRoles($roles): void
+    {
+        $this->roles = $roles;
+    }
+
+    public function getUsername()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMovies()
+    {
+        return $this->movies;
+    }
+
+    /**
+     * @param mixed $movies
+     */
+    public function setMovies($movies): void
+    {
+        $this->movies = $movies;
+    }
+
+
 }

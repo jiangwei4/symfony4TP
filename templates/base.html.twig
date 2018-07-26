@@ -19,11 +19,31 @@
         <div class="w3-bar w3-red">
             <a href="#" class="w3-bar-item"><img src="img\netflix.png"></a>
             <a href="/" class="w3-bar-item w3-button">Home</a>
-            <a href="#" class="w3-bar-item w3-button">sign in</a>
+            <a href="/signin" class="w3-bar-item w3-button">sign in</a>
             <a href="/signup" class="w3-bar-item w3-button">sign up</a>
-            <a href="#" class="w3-bar-item w3-button">log out</a>
+            <a href="/logout" class="w3-bar-item w3-button">log out</a>
         </div>
     </div>
+
+
+
+
+
+
+
+
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <p>Bonjour: {{ app.user.firstname }} </p>
+        <p><a href="\logout">logout</a> </p>
+        <p><a href="\profile">modifier profile</a></p>
+    {% else %}
+
+        <p><a href="\login">login</a> </p>
+    {% endif %}
+
+
+
+
     <div class="w3-container">
 
 

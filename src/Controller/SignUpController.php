@@ -27,8 +27,7 @@ class SignUpController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
-            $user = $form->getData();
-
+                $user = $form->getData();
             $password = $passwordEncoder->encodePassword($user, $user->getPassword());
             $user->setPassword($password);
             $entityManager = $this->getDoctrine()->getManager();

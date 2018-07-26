@@ -40,6 +40,12 @@ class Movie
      */
     private $description;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="movies")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $user;
+
     public function getId()
     {
         return $this->id;
