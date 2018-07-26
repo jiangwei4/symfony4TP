@@ -34,10 +34,9 @@ class AppCountMovieUserCommand extends Command
         $io = new SymfonyStyle($input, $output);
         $arg1 = $input->getArgument('email');
         $user = $this->UserManagement->getUserByEmail($arg1);
-        $io->note(sprintf('You passed an argument: %s', $arg1));
         if ($user != null) {
             $count = $this->UserManagement->getNumberMoviesByUserEmail($arg1);
-            $io->success(sprintf('l utilisateur a redigé %s articles', $count));
+            $io->success(sprintf('l utilisateur %s a redigé %s articles',$user->getEmail() ,$count));
         } else {
             $io->error('No user with that email');
         }
