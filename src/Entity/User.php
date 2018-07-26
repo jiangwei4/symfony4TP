@@ -2,6 +2,9 @@
 
 namespace App\Entity;
 
+
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -59,6 +62,12 @@ class User implements UserInterface
      * @ORM\Column(type="simple_array")
      */
     private $roles;
+
+    public function __construct()
+    {
+        $this->movies = new ArrayCollection();
+        $this->roles = array ('ROLE_USER');
+    }
 
     public function getId()
     {
@@ -169,5 +178,33 @@ class User implements UserInterface
         $this->movies = $movies;
     }
 
+    /**
+     * @return Collection|Movie[]
+     */
+    public function getArticles(): Collection
+    {
+        return $this->movies;
+    }
 
+    public function addMovie(Movie $movie): self
+    {
+        if (!$this->movies->contains($movie)) {
+            $this->movies[] = $movie;
+            $movie->setUser($this);
+        }
+
+        return $this;
+    }
+    public function removeMovie(Movie $movie): self
+    {
+        if ($this->movies->contains($movie)) {
+            $this->movies->removeElement($movie);
+            // set the owning side to null (unless already changed)
+            if ($movie->getUser() === $this) {
+                $movie->setUser(null);
+            }
+        }
+
+        return $this;
+    }
 }
