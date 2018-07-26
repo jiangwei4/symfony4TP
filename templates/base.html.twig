@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <meta name="viewport" content="width=device-width"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="viewport" content="width=device-width, minimum-scale=0.25"/>
+        <meta name="viewport" content="width=device-width, maximum-scale=5.0"/>
+        <meta name="viewport" content="width=device-width, user-scalable=no"/>
+        <link rel="stylesheet" href="css\style.css">
+        <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+        <script src="js\style.js"></script>
+    </head>
+    <body>
+    <div class="w3-top">
+        <div class="w3-bar w3-red">
+            <a href="#" class="w3-bar-item"><img src="img\netflix.png"></a>
+            <a href="/" class="w3-bar-item w3-button">Home</a>
+            <a href="#" class="w3-bar-item w3-button">sign in</a>
+            <a href="/signup" class="w3-bar-item w3-button">sign up</a>
+            <a href="#" class="w3-bar-item w3-button">log out</a>
+        </div>
+    </div>
+    <div class="w3-container">
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </div>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+body{
+    background-color: grey;
+}
+img{
+
+    width: 10%;
+}
+@media screen and (max-width: 480px) {
+    body{
+        background-color: yellow;
+    }
+    p{
+        font-size: 18px;
+    }
+    img{
+
+        width: 30%;
+    }
+
+}
