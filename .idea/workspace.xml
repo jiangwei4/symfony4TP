@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c151306d-01c4-4fd1-9148-95167b2bb3f5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/base.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/netflix.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/style.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../symfony-master/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../symfony-master/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../symfony-master/config/packages/dev/monolog.yaml" beforeDir="false" />
     </list>
@@ -64,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/config/packages/dev/monolog.yaml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="13" column="57" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
+              <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -373,12 +367,12 @@
       <option name="presentableId" value="Default" />
       <updated>1532614582498</updated>
       <workItem from="1532614583795" duration="6998000" />
-      <workItem from="1532624465851" duration="1027000" />
+      <workItem from="1532624465851" duration="1105000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8025000" />
+    <option name="totallyTimeSpent" value="8103000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="188" y="70" width="1400" height="1003" extended-state="0" />
@@ -715,7 +709,7 @@
     <entry file="file://$PROJECT_DIR$/config/packages/dev/monolog.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="13" column="57" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
+          <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
         </state>
       </provider>
     </entry>
