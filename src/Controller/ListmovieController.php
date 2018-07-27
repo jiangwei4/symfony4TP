@@ -39,7 +39,6 @@ class ListmovieController extends Controller
 
     }
 
-
     /**
      * @Route("/listmovie/edite/{id}", name="listmovie_edite")
      * @ParamConverter("user", options={"mapping"={"id"="id"}})
@@ -56,6 +55,7 @@ class ListmovieController extends Controller
             $entityManager->persist($movie);
             $entityManager->flush();
             $this->addFlash('notice', 'Changement(s) effectué(s)!');
+
             return $this->redirectToRoute('listmovie');
         }
 

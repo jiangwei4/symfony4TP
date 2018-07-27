@@ -3,17 +3,17 @@
 {% block title %}Hello {{ controller_name }}!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
 
-<div class="example-wrapper">
+    <div class="example-wrapper">
 
 
 
-    {% for movie in movies %}
-<br>
+        {% for movie in movies %}
+            <br>
 
             <div class="w3-card-4" style="width:100%;">
                 <header class="w3-container w3-blue">
@@ -27,16 +27,16 @@
                     <p>{{ movie.description }}</p>
                 </div>
                 <footer class="w3-container w3-blue">
-                    <a href="{{ path('listmovie_remove',{'id':movie.id}) }}"><img src="img\supr.png"></a>
-                    <a href="{{ path('listmovie_edite',{'id':movie.id}) }}"><img src="img\edit.png"></a>
+                    <a href="{{ path('listuser_movieremove',{'id':movie.id}) }}"><img src="\img\supr.png"></a>
+                    <a href="{{ path('listmovie_edite',{'id':movie.id}) }}"><img src="\img\edit.png"></a>
 
                 </footer>
 
-        </div>
+            </div>
 
 
 
-    {% endfor %}
+        {% endfor %}
 
-</div>
+    </div>
 {% endblock %}

@@ -10,17 +10,19 @@
         <meta name="viewport" content="width=device-width, minimum-scale=0.25"/>
         <meta name="viewport" content="width=device-width, maximum-scale=5.0"/>
         <meta name="viewport" content="width=device-width, user-scalable=no"/>
-        <link rel="stylesheet" href="css\style.css">
+        <link rel="stylesheet" href="\css\style.css">
         <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-        <script src="js\style.js"></script>
+        <script src="\js\style.js"></script>
     </head>
     <body>
+
+        <header>
     <div class="w3-top">
         <div class="w3-bar w3-red">
             <table></table>
-            <a href="#" class="w3-bar-item"><img src="img\netflix.png"></a>
+           <!-- <a href="#" class="w3-bar-item"><img src="/img/netflix.png"></a>-->
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                <p>Hello {{ app.user.firstname }}</p>
+              <!--  <p>Hello {{ app.user.firstname }}</p>-->
             {% endif %}
             <a href="/" class="w3-bar-item w3-button">Home</a>
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
@@ -30,7 +32,7 @@
             {% endif %}
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                  {% if is_granted('ROLE_ADMIN') %}
-                     <a href="/" class="w3-bar-item w3-button">All Users</a>
+                     <a href="/listusers" class="w3-bar-item w3-button">All Users</a>
                      {% endif %}
                 <a href="/logout" class="w3-bar-item w3-button">Log out</a>
             {% else %}
@@ -39,6 +41,8 @@
             {% endif %}
         </div>
     </div>
+        </header>
+
 
 
 
@@ -63,8 +67,10 @@
         {% endfor %}
 
 
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+    {% block body %}{% endblock %}
+    {% block javascripts %}{% endblock %}
+
+
     </div>
     </body>
 </html>
