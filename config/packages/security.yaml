@@ -15,8 +15,8 @@ security:
             anonymous: ~
             provider: our_db_provider
             form_login:
-                login_path: login
-                check_path: login
+                login_path: signin
+                check_path: signin
                 username_parameter: "login_user[email]"
                 password_parameter: "login_user[password]"
             logout:
