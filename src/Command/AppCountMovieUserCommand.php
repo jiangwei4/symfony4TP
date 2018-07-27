@@ -33,6 +33,11 @@ class AppCountMovieUserCommand extends Command
     {
         $io = new SymfonyStyle($input, $output);
         $arg1 = $input->getArgument('email');
+
+        if (null === $arg1){
+            $io->error('Ta pas rentré d\'email salaud');
+            return;
+        }
         $user = $this->UserManagement->getUserByEmail($arg1);
         if ($user != null) {
             $count = $this->UserManagement->getNumberMoviesByUserEmail($arg1);

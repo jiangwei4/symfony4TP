@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Movie;
 use App\Entity\User;
+use App\Form\EditmovieType;
 use App\Form\EdituserType;
 use App\Repository\UserRepository;
 use App\Repository\MovieRepository;
@@ -102,7 +103,30 @@ class ListusersController extends Controller
 
     }
 
+    /**
+     * @Route("/listuser/movieedit/{id}", name="listuser_movieedit")
+     * @ParamConverter("movie", options={"mapping"={"id"="id"}})
+     */
+    public function editMovie(Request $request, EntityManagerInterface $entityManager,
+                         Movie $movie)
+    {
 
+
+        $form = $this->createForm(EditmovieType::class, $movie);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $entityManager->persist($movie);
+            $entityManager->flush();
+            $this->addFlash('notice', 'Changement(s) effectué(s)!');
+            return $this->redirectToRoute('listuser_listmovie', ['id' => $movie->getUser()->getId()]);
+        }
+
+        return $this->render('listusers/movieeditindex.html.twig', [
+            'controller_name' => 'EdituserController',
+            'form' => $form->createView(),
+        ]);
+    }
 
 
 }

@@ -37,7 +37,10 @@ class AppCreateAdminCommand extends Command
         $io = new SymfonyStyle($input, $output);
         $email = $input->getArgument('email');
         $password = $input->getArgument('password');
-
+        if (null === $email || null === $password){
+            $io->error('Ta pas rentré d\'email et/ou de password salaud');
+            return;
+        }
         $io->note(sprintf('Create a User for email: %s', $email));
         $user = new User();
         $user->setEmail($email);
