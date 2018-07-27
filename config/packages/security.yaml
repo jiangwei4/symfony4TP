@@ -17,8 +17,9 @@ security:
             form_login:
                 login_path: signin
                 check_path: signin
-                username_parameter: "login_user[email]"
-                password_parameter: "login_user[password]"
+                username_parameter: "signin[email]"
+                #inspecter l'element puis regarder le name
+                password_parameter: "signin[password]"
             logout:
                 path: /logout
                 target: /
@@ -30,5 +31,6 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-         - { path: ^/admin, roles: ROLE_ADMIN }
-         - { path: ^/profile, roles: ROLE_USER }
+         - { path: ^/allusers, roles: ROLE_ADMIN }
+         - { path: ^/createmovie, roles: ROLE_USER }
+         - { path: ^/edituser, roles: ROLE_USER }

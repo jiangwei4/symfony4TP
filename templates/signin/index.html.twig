@@ -8,6 +8,7 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 <br><br>
+
 <div class="example-wrapper">
 
 
@@ -16,8 +17,6 @@
     <div class="w3-container w3-red">
         <h2>Input Form</h2>
     </div>
-
-  <!--<form class="w3-container w3-red">-->
 
         <label class="w3-text"><b> {{ form_label(form.email) }}</b></label>
         <br>{{ form_errors(form.email) }}
@@ -32,8 +31,7 @@
 
         {{ form_row(form.submit) }}
 
-  <!--  </form>-->
-
+    {{ form_end(form) }}
 
 
 </div>

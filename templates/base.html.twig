@@ -17,11 +17,26 @@
     <body>
     <div class="w3-top">
         <div class="w3-bar w3-red">
+            <table></table>
             <a href="#" class="w3-bar-item"><img src="img\netflix.png"></a>
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <p>Hello {{ app.user.firstname }}</p>
+            {% endif %}
             <a href="/" class="w3-bar-item w3-button">Home</a>
-            <a href="/signin" class="w3-bar-item w3-button">sign in</a>
-            <a href="/signup" class="w3-bar-item w3-button">sign up</a>
-            <a href="/logout" class="w3-bar-item w3-button">log out</a>
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <a href="/edituser" class="w3-bar-item w3-button">Edit Profil</a>
+                <a href="/createmovie" class="w3-bar-item w3-button">Create Video</a>
+                <a href="/listmovie" class="w3-bar-item w3-button">List Video</a>
+            {% endif %}
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                 {% if is_granted('ROLE_ADMIN') %}
+                     <a href="/" class="w3-bar-item w3-button">All Users</a>
+                     {% endif %}
+                <a href="/logout" class="w3-bar-item w3-button">Log out</a>
+            {% else %}
+                <a href="/signup" class="w3-bar-item w3-button">Sign up</a>
+                <a href="/signin" class="w3-bar-item w3-button">Sign in</a>
+            {% endif %}
         </div>
     </div>
 
@@ -30,16 +45,8 @@
 
 
 
+<br><br><br><br>
 
-
-    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-        <p>Bonjour: {{ app.user.firstname }} </p>
-        <p><a href="\logout">logout</a> </p>
-        <p><a href="\profile">modifier profile</a></p>
-    {% else %}
-
-        <p><a href="\login">login</a> </p>
-    {% endif %}
 
 
 

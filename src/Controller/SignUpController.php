@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
-use App\Form\UserType;
+use App\Form\Signup;
 use App\Repository\UserRepository;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,7 +23,7 @@ class SignUpController extends Controller
 
 
         $user = new User();
-        $form = $this->createForm(UserType::class,$user);
+        $form = $this->createForm(Signup::class,$user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
