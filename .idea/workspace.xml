@@ -2,17 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c151306d-01c4-4fd1-9148-95167b2bb3f5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/listusers/movieeditindex.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Event/MovieRegisteredEvent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Event/UserRegisteredEvent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Subscriber/UserSubscriber.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../symfony-master/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../symfony-master/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../symfony-master/config/packages/dev/monolog.yaml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../symfony-master/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../symfony-master/config/packages/security.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../symfony-master/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/../symfony-master/src/Entity/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/AppCountMovieUserCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/AppCountMovieUserCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/AppCreateAdminCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/AppCreateAdminCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ListusersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ListusersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/listmovie/editMovie.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/listmovie/editMovie.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/listusers/listmovieindex.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/listusers/listmovieindex.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CreatemovieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CreatemovieController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ListmovieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ListmovieController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SignUpController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SignUpController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SigninController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SigninController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,11 +27,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ListmovieController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/ListmovieController.php">
+      <file leaf-file-name="SecurityController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../symfony-master/src/Controller/SecurityController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="56" column="68" selection-start-line="49" selection-start-column="8" selection-end-line="56" selection-end-column="68" />
+            <state relative-caret-position="382">
+              <caret line="37" column="69" selection-start-line="36" selection-start-column="8" selection-end-line="37" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Signup.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Form/Signup.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="UserRegisteredEvent.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Event/UserRegisteredEvent.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="17" column="5" selection-end-line="18" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreatemovieController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/CreatemovieController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="381">
+              <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
               <folding>
                 <element signature="e#34#55#0#PHP" expanded="true" />
               </folding>
@@ -38,86 +62,59 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppCountMovieUserCommand.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Command/AppCountMovieUserCommand.php">
+      <file leaf-file-name="UserSubscriber.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Subscriber/UserSubscriber.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="39" column="9" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="39" selection-end-column="9" />
+            <state relative-caret-position="340">
+              <caret line="22" column="79" lean-forward="true" selection-start-line="22" selection-start-column="79" selection-end-line="22" selection-end-column="79" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppCreateAdminCommand.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Command/AppCreateAdminCommand.php">
+      <file leaf-file-name="ModifmovieType.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Form/ModifmovieType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="40" column="65" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
+            <state relative-caret-position="238">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editMovie.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/listmovie/editMovie.html.twig">
+      <file leaf-file-name="MovieRegisteredEvent.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Event/MovieRegisteredEvent.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="38" selection-start-line="9" selection-end-line="38" />
+            <state relative-caret-position="51">
+              <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListusersController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/ListusersController.php">
+      <file leaf-file-name="SignUpController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/SignUpController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="113" selection-start-line="113" selection-end-line="113" />
+            <state relative-caret-position="272">
+              <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
               <folding>
-                <element signature="e#34#55#0#PHP" expanded="true" />
+                <element signature="e#34#54#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="movieeditindex.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/listusers/movieeditindex.html.twig">
+      <file leaf-file-name="dev-2018-07-28.log" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/var/log/dev-2018-07-28.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="-1694">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/listmovie/index.html.twig">
+      <file leaf-file-name="UserSubscriber.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../symfony-master/src/Subscriber/UserSubscriber.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="42" selection-end-line="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="listmovieindex.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/listusers/listmovieindex.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="30" column="56" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="editindex.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/listusers/editindex.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
-              <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/listusers/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="82" selection-end-line="29" />
+            <state relative-caret-position="238">
+              <caret line="16" column="5" selection-end-line="24" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -135,7 +132,6 @@
         <option value="$PROJECT_DIR$/templates/sign_up/index.html.twig" />
         <option value="$PROJECT_DIR$/config/packages/dev/monolog.yaml" />
         <option value="$PROJECT_DIR$/src/Form/MovieType.php" />
-        <option value="$PROJECT_DIR$/src/Controller/SigninController.php" />
         <option value="$PROJECT_DIR$/../symfony-master/src/Entity/User.php" />
         <option value="$PROJECT_DIR$/config/routes.yaml" />
         <option value="$PROJECT_DIR$/src/Controller/HomeController.php" />
@@ -145,7 +141,6 @@
         <option value="$PROJECT_DIR$/templates/home/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/Manager/UserManager.php" />
-        <option value="$PROJECT_DIR$/src/Controller/SignUpController.php" />
         <option value="$PROJECT_DIR$/../symfony-master/config/packages/security.yaml" />
         <option value="$PROJECT_DIR$/config/packages/framework.yaml" />
         <option value="$PROJECT_DIR$/src/Form/SigninType.php" />
@@ -156,7 +151,6 @@
         <option value="$PROJECT_DIR$/templates/edituser/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Form/CreatevideoType.php" />
         <option value="$PROJECT_DIR$/templates/createmovie/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/CreatemovieController.php" />
         <option value="$PROJECT_DIR$/config/packages/security.yaml" />
         <option value="$PROJECT_DIR$/src/Entity/Movie.php" />
         <option value="$PROJECT_DIR$/src/Form/ModifmovieType.php" />
@@ -167,13 +161,19 @@
         <option value="$PROJECT_DIR$/templates/listmovie/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/listusers/editindex.html.twig" />
         <option value="$PROJECT_DIR$/templates/listusers/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/ListmovieController.php" />
         <option value="$PROJECT_DIR$/templates/listusers/listmovieindex.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/ListusersController.php" />
         <option value="$PROJECT_DIR$/templates/listmovie/editMovie.html.twig" />
         <option value="$PROJECT_DIR$/templates/listusers/movieeditindex.html.twig" />
         <option value="$PROJECT_DIR$/src/Command/AppCountMovieUserCommand.php" />
         <option value="$PROJECT_DIR$/src/Command/AppCreateAdminCommand.php" />
+        <option value="$PROJECT_DIR$/src/Controller/SigninController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/ListmovieController.php" />
+        <option value="$PROJECT_DIR$/src/Event/UserRegisteredEvent.php" />
+        <option value="$PROJECT_DIR$/src/Event/MovieRegisteredEvent.php" />
+        <option value="$PROJECT_DIR$/src/Controller/CreatemovieController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/SignUpController.php" />
+        <option value="$PROJECT_DIR$/src/Subscriber/UserSubscriber.php" />
       </list>
     </option>
   </component>
@@ -306,6 +306,17 @@
             <path>
               <item name="symfonyTPyouflix" type="b2602c69:ProjectViewProjectNode" />
               <item name="symfonyTPyouflix" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="symfonyTPyouflix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="symfonyTPyouflix" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="symfonyTPyouflix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="symfonyTPyouflix" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -335,7 +346,19 @@
               <item name="symfonyTPyouflix" type="b2602c69:ProjectViewProjectNode" />
               <item name="symfonyTPyouflix" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Event" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="symfonyTPyouflix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="symfonyTPyouflix" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Form" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="symfonyTPyouflix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="symfonyTPyouflix" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Subscriber" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="symfonyTPyouflix" type="b2602c69:ProjectViewProjectNode" />
@@ -362,12 +385,35 @@
             </path>
             <path>
               <item name="symfonyTPyouflix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="symfonyTPyouflix" type="462c0819:PsiDirectoryNode" />
+              <item name="var" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="symfonyTPyouflix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="symfonyTPyouflix" type="462c0819:PsiDirectoryNode" />
+              <item name="var" type="462c0819:PsiDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="symfonyTPyouflix" type="b2602c69:ProjectViewProjectNode" />
               <item name="symfony-master" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="symfonyTPyouflix" type="b2602c69:ProjectViewProjectNode" />
               <item name="symfony-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="symfonyTPyouflix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="symfony-master" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="symfonyTPyouflix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="symfony-master" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Event" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="symfonyTPyouflix" type="b2602c69:ProjectViewProjectNode" />
@@ -398,6 +444,11 @@
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="symfonyTPyouflix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="symfony-master" type="462c0819:PsiDirectoryNode" />
+              <item name="var" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -414,14 +465,15 @@
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\wamp\www\symfonyTPyouflix\src" />
+      <recent name="D:\wamp\www\symfonyTPyouflix\public\img" />
+      <recent name="D:\wamp\www\symfonyTPyouflix" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\wamp\www\symfonyTPyouflix\templates\editmovie" />
       <recent name="D:\wamp\www\symfony4TP" />
       <recent name="D:\wamp\www\symfonyTPyouflix\public" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\wamp\www\symfonyTPyouflix\public\img" />
-      <recent name="D:\wamp\www\symfonyTPyouflix" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -450,25 +502,27 @@
       <workItem from="1532624465851" duration="14306000" />
       <workItem from="1532674084558" duration="16244000" />
       <workItem from="1532697764988" duration="5867000" />
+      <workItem from="1532814140526" duration="2572000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43415000" />
+    <option name="totallyTimeSpent" value="45987000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2585288" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26119402" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.10607676" side_tool="true" visible="true" weight="0.32897604" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.10660981" side_tool="true" visible="true" weight="0.32897604" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.8939232" visible="true" weight="0.32897604" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.8933902" visible="true" weight="0.32897604" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -487,64 +541,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../symfony-master/src/Form/ProfileUserType.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../symfony-master/src/Form/LoginUserType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/Signup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="21" column="49" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/SigninController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="56" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
-          <folding>
-            <element signature="e#34#54#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/signin/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="15" selection-start-line="15" selection-end-line="33" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/signup/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="36" column="90" selection-start-line="36" selection-start-column="63" selection-end-line="36" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../symfony-master/src/Form/AdminType.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../symfony-master/config/packages/security.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="34" column="28" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../symfony-master/src/Controller/GameController.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -572,40 +568,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/ModifmovieType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Form/MovieType.php" />
-    <entry file="file://$PROJECT_DIR$/src/Form/CreatevideoType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/SignUpController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8">
-          <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
-          <folding>
-            <element signature="e#34#54#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/UserRepository.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/EdituserType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="45" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/editmovie/index.html.twig" />
     <entry file="file://$PROJECT_DIR$/../symfony-master/templates/home/index.html.twig">
@@ -625,24 +590,7 @@
     <entry file="file://$PROJECT_DIR$/../symfony-master/src/Controller/AdminController.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../symfony-master/src/Controller/SecurityController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="40" column="46" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/EditmovieController.php" />
-    <entry file="file://$PROJECT_DIR$/src/Controller/CreatemovieController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-          <folding>
-            <element signature="e#34#55#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -671,16 +619,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/EdituserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-          <folding>
-            <element signature="e#34#60#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../symfony-master/src/Controller/UserController.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -695,13 +633,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="22" column="83" selection-start-line="22" selection-start-column="83" selection-end-line="22" selection-end-column="83" />
         </state>
       </provider>
     </entry>
@@ -734,14 +665,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/listusers/editindex.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
+        <state relative-caret-position="595">
           <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/listmovie/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
+        <state relative-caret-position="714">
           <caret line="42" selection-end-line="42" />
         </state>
       </provider>
@@ -755,8 +686,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/listusers/listmovieindex.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
+        <state relative-caret-position="510">
           <caret line="30" column="56" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/listmovie/editMovie.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" selection-start-line="9" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/listusers/movieeditindex.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Command/AppCountMovieUserCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="39" column="9" selection-start-line="36" selection-start-column="8" selection-end-line="39" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Command/AppCreateAdminCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="40" column="65" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -770,41 +729,140 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/listmovie/editMovie.html.twig">
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="38" selection-start-line="9" selection-end-line="38" />
+        <state relative-caret-position="-350">
+          <caret line="22" column="83" selection-start-line="22" selection-start-column="83" selection-end-line="22" selection-end-column="83" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/listusers/movieeditindex.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Form/EdituserType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="238">
+          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/SigninController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="71" selection-start-line="20" selection-start-column="71" selection-end-line="20" selection-end-column="71" />
+          <folding>
+            <element signature="e#34#54#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/ListmovieController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="56" column="68" selection-start-line="49" selection-start-column="8" selection-end-line="56" selection-end-column="68" />
+        <state relative-caret-position="7">
+          <caret line="37" column="50" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
           <folding>
             <element signature="e#34#55#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Command/AppCountMovieUserCommand.php">
+    <entry file="file://$PROJECT_DIR$/../symfony-master/src/Event/UserRegisteredEvent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="39" column="9" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="39" selection-end-column="9" />
+        <state>
+          <caret selection-end-line="18" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Command/AppCreateAdminCommand.php">
+    <entry file="file://$PROJECT_DIR$/src/Controller/EdituserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="40" column="65" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
+        <state relative-caret-position="340">
+          <caret line="25" column="79" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="79" />
+          <folding>
+            <element signature="e#34#60#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/CreatevideoType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Event/UserRegisteredEvent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="5" selection-end-line="18" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Event/MovieRegisteredEvent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/CreatemovieController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+          <folding>
+            <element signature="e#34#55#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../symfony-master/src/Subscriber/UserSubscriber.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" column="5" selection-end-line="24" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/ModifmovieType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/Signup.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../symfony-master/src/Controller/SecurityController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="37" column="69" selection-start-line="36" selection-start-column="8" selection-end-line="37" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/SignUpController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+          <folding>
+            <element signature="e#34#54#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/var/log/dev-2018-07-28.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1694">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Subscriber/UserSubscriber.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="22" column="79" lean-forward="true" selection-start-line="22" selection-start-column="79" selection-end-line="22" selection-end-column="79" />
         </state>
       </provider>
     </entry>

@@ -17,7 +17,9 @@ class SigninController extends Controller
     {
         $user = new User();
         $form= $this->createForm(SigninType::class, $user);
-
+        if($form->isSubmitted() && $form->isValid()){
+            $this->addFlash('notice','Bonjour '+$user->getFirstname());
+        }
         return $this->render('signin/index.html.twig', [
             'controller_name' => 'SigninController',
             'form'=> $form->createView(),

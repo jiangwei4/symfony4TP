@@ -3,8 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\Movie;
+use App\Event\MovieRegisteredEvent;
 use App\Form\CreatevideoType;
 use App\Repository\MovieRepository;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -27,6 +29,7 @@ class CreatemovieController extends Controller
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($movie);
             $entityManager->flush();
+            $this->addFlash('notice','vidéo crée');
             return $this->redirectToRoute('home');
         }
 

@@ -35,6 +35,7 @@ class ListmovieController extends Controller
     {
         $entityManager->remove($movie);
         $entityManager->flush();
+        $this->addFlash('notice', 'vidéo supprimée');
         return $this->redirectToRoute('listmovie');
 
     }

@@ -3,9 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Event\UserRegisteredEvent;
 use App\Form\Signup;
 use App\Repository\UserRepository;
 use Psr\Log\LoggerInterface;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -18,7 +20,7 @@ class SignUpController extends Controller
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function index(Request $request, UserPasswordEncoderInterface $passwordEncoder, LoggerInterface $logger, UserRepository $userRepository)
+    public function index(Request $request, UserPasswordEncoderInterface $passwordEncoder, EventDispatcherInterface $eventDispatcher, UserRepository $userRepository, LoggerInterface $logger2)
     {
 
 
@@ -33,8 +35,10 @@ class SignUpController extends Controller
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
-            $logger->info('nouvel utilisateur !');
-
+            //$logger->info('nouvel utilisateur !');
+            $this->addFlash('notice','Nouveau utilisateur enregistré '.$user->getFirstname());
+            $event = new UserRegisteredEvent($user);
+            $eventDispatcher->dispatch(UserRegisteredEvent::NAME,$event);
             return $this->redirectToRoute('home');
 
         }
