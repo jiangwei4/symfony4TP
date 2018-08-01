@@ -50,7 +50,9 @@
 
 
 <br><br><br><br>
-
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <p>Bonjour: {{ app.user.firstname }} </p>
+        {% endif %}
 
 
 

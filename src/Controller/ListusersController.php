@@ -1,10 +1,7 @@
 <?php
-
 namespace App\Controller;
-
 use App\Entity\Movie;
 use App\Entity\User;
-use App\Event\MovieRegisteredEvent;
 use App\Event\MovieRemovedEvent;
 use App\Event\UserRemoverEvent;
 use App\Form\EditmovieType;
@@ -17,8 +14,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
-
-
 class ListusersController extends Controller
 {
     /**
@@ -38,7 +33,6 @@ class ListusersController extends Controller
             'users' => $u,
         ]);
     }
-
     /**
      * @Route("/listuser/remove/{id}", name="listuser_remove")
      * @ParamConverter("user", options={"mapping"={"id"="id"}})
@@ -51,10 +45,7 @@ class ListusersController extends Controller
         $event = new UserRemoverEvent($user);
         $eventDispatcher->dispatch(UserRemoverEvent::NAME,$event);
         return $this->redirectToRoute('listusers');
-
     }
-
-
     /**
      * @Route("/listuser/edit/{id}", name="listuser_edit")
      * @ParamConverter("user", options={"mapping"={"id"="id"}})
@@ -62,27 +53,20 @@ class ListusersController extends Controller
     public function edit(Request $request, EntityManagerInterface $entityManager,
                          UserRepository $userRepository, int $id)
     {
-
         $user = $userRepository->find($id);
         $form =$this->createForm(EdituserType::class,$user);
         $form->handleRequest($request);
-
         if($form->isSubmitted() && $form->isValid()){
             $entityManager->persist($user);
             $entityManager->flush();
             $this->addFlash('notice', 'Changement(s) effectué(s)!');
             return $this->redirectToRoute('listusers');
         }
-
         return $this->render('listusers/editindex.html.twig', [
             'controller_name' => 'EdituserController',
             'form' => $form->createView(),
         ]);
     }
-
-
-
-
     /**
      * @Route("/listuser/listmovie/{id}", name="listuser_listmovie")
      * @ParamConverter("user", options={"mapping"={"id"="id"}})
@@ -95,9 +79,7 @@ class ListusersController extends Controller
             'controller_name' => 'listuserlistmovieController',
             'movies' => $movies,
         ]);
-
     }
-
     /**
      * @Route("/listuser/movieremove/{id}", name="listuser_movieremove")
      * @ParamConverter("movie", options={"mapping"={"id"="id"}})
@@ -109,34 +91,25 @@ class ListusersController extends Controller
         $event = new MovieRemovedEvent($movie);
         $eventDispatcher->dispatch(MovieRemovedEvent::NAME,$event);
         return $this->redirectToRoute('listuser_listmovie', ['id' => $movie->getUser()->getId()]);
-
-
     }
-
     /**
      * @Route("/listuser/movieedit/{id}", name="listuser_movieedit")
      * @ParamConverter("movie", options={"mapping"={"id"="id"}})
      */
     public function editMovie(Request $request, EntityManagerInterface $entityManager,
-                         Movie $movie)
+                              Movie $movie)
     {
-
-
         $form = $this->createForm(EditmovieType::class, $movie);
         $form->handleRequest($request);
-
         if($form->isSubmitted() && $form->isValid()){
             $entityManager->persist($movie);
             $entityManager->flush();
             $this->addFlash('notice', 'Changement(s) effectué(s)!');
             return $this->redirectToRoute('listuser_listmovie', ['id' => $movie->getUser()->getId()]);
         }
-
         return $this->render('listusers/movieeditindex.html.twig', [
             'controller_name' => 'EdituserController',
             'form' => $form->createView(),
         ]);
     }
-
-
 }
