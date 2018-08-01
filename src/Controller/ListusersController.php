@@ -4,11 +4,15 @@ namespace App\Controller;
 
 use App\Entity\Movie;
 use App\Entity\User;
+use App\Event\MovieRegisteredEvent;
+use App\Event\MovieRemovedEvent;
+use App\Event\UserRemoverEvent;
 use App\Form\EditmovieType;
 use App\Form\EdituserType;
 use App\Repository\UserRepository;
 use App\Repository\MovieRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -39,10 +43,13 @@ class ListusersController extends Controller
      * @Route("/listuser/remove/{id}", name="listuser_remove")
      * @ParamConverter("user", options={"mapping"={"id"="id"}})
      */
-    public function remove(User $user, EntityManagerInterface $entityManager)
+    public function remove(User $user, EntityManagerInterface $entityManager, EventDispatcherInterface $eventDispatcher)
     {
         $entityManager->remove($user);
         $entityManager->flush();
+        $this->addFlash('notice', 'utilisateur supprimé!');
+        $event = new UserRemoverEvent($user);
+        $eventDispatcher->dispatch(UserRemoverEvent::NAME,$event);
         return $this->redirectToRoute('listusers');
 
     }
@@ -95,11 +102,14 @@ class ListusersController extends Controller
      * @Route("/listuser/movieremove/{id}", name="listuser_movieremove")
      * @ParamConverter("movie", options={"mapping"={"id"="id"}})
      */
-    public function removeMovie(Movie $movie, EntityManagerInterface $entityManager)
+    public function removeMovie(Movie $movie, EntityManagerInterface $entityManager, EventDispatcherInterface $eventDispatcher)
     {
         $entityManager->remove($movie);
         $entityManager->flush();
+        $event = new MovieRemovedEvent($movie);
+        $eventDispatcher->dispatch(MovieRemovedEvent::NAME,$event);
         return $this->redirectToRoute('listuser_listmovie', ['id' => $movie->getUser()->getId()]);
+
 
     }
 

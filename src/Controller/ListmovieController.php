@@ -3,9 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Movie;
+use App\Event\MovieRemovedEvent;
 use App\Form\EditmovieType;
 use App\Repository\MovieRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -31,13 +33,14 @@ class ListmovieController extends Controller
      * @Route("/listmovie/remove/{id}", name="listmovie_remove")
      * @ParamConverter("user", options={"mapping"={"id"="id"}})
      */
-    public function remove(Movie $movie, EntityManagerInterface $entityManager)
+    public function remove(Movie $movie, EntityManagerInterface $entityManager, EventDispatcherInterface $eventDispatcher)
     {
         $entityManager->remove($movie);
         $entityManager->flush();
         $this->addFlash('notice', 'vidéo supprimée');
+        $event = new MovieRemovedEvent($movie);
+        $eventDispatcher->dispatch(MovieRemovedEvent::NAME,$event);
         return $this->redirectToRoute('listmovie');
-
     }
 
     /**

@@ -16,7 +16,7 @@ class CreatemovieController extends Controller
     /**
      * @Route("/createmovie", name="createmovie")
      */
-    public function index(Request $request, MovieRepository $articleRepository)
+    public function index(Request $request, MovieRepository $articleRepository, EventDispatcherInterface $eventDispatcher)
     {
         $user = $this->getUser();
         $movie = new Movie();
@@ -30,6 +30,8 @@ class CreatemovieController extends Controller
             $entityManager->persist($movie);
             $entityManager->flush();
             $this->addFlash('notice','vidéo crée');
+            $event = new MovieRegisteredEvent($movie);
+            $eventDispatcher->dispatch(MovieRegisteredEvent::NAME,$event);
             return $this->redirectToRoute('home');
         }
 
