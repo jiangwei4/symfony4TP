@@ -39,6 +39,10 @@ class ListusersController extends Controller
      */
     public function remove(User $user, EntityManagerInterface $entityManager, EventDispatcherInterface $eventDispatcher)
     {
+        //on remove l appartenance de l utilisateur a toutes ses videos
+        foreach ($user->getMovies() as $movie) {
+            $user->removeMovie($movie);
+        }
         $entityManager->remove($user);
         $entityManager->flush();
         $this->addFlash('notice', 'utilisateur supprimé!');

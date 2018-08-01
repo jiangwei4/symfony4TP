@@ -9,6 +9,10 @@
 </style>
 
 <div class="example-wrapper">
+    {% if users|length < 1 %}
+        <p>Aucun utilisateur</p>
+    {% endif %}
+
     {% for user in users %}
 
 <br>

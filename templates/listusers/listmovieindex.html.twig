@@ -10,7 +10,9 @@
 
     <div class="example-wrapper">
 
-
+        {% if movies|length < 1 %}
+            <p>Aucune video</p>
+        {% endif %}
 
         {% for movie in movies %}
             <br>
